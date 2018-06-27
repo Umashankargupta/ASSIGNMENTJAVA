@@ -1,0 +1,155 @@
+Q1.Create a program to input a Date from the user in dd/mm/yyyy format and print it in English. 
+Q2. Create a generic Sorting function that can sort any type of array (primitive types).
+Program:-
+package genericsort;
+import java.util.ArrayList;
+import java.util.*;
+import static java.util.Arrays.sort;
+
+public class Genericsort {
+    static<T>void print(T array[]){
+        for(T var : array){
+            System.out.print(" "+var);
+            }
+    }
+
+    
+    public static void main(String[] args) {
+        Integer[] array={13,6,7,21,45,2,21,50};
+          Character array2[]={'S','O','N','U'};
+        print(array);
+        System.out.println();
+        sort(array);
+        print(array);
+        System.out.println();
+        print(array2);
+        System.out.println();
+        sort(array2);
+        print(array2);
+        System.out.println();
+        
+    }
+    
+}
+ 
+Q3.Create a generic print function that can print all types of arrays (primitive types).
+Program:-
+package generics;
+
+
+public class GenericsArray {
+    static<T>void print(T array[]){
+        for(T var : array){
+            System.out.print(" "+var);
+            }
+    }
+    public static void main(String args[]){
+        Character array[]={'G','U','P','T','A'};
+        Integer array2[]={2,4,6,8,7};
+        print(array);
+        System.out.println();
+        print(array2);
+       
+        
+        
+ 
+       
+    }
+    
+}
+
+Q4. Write a java program that sorts the list on the basis of age and name.
+Program:-
+package personal;
+import java.util.ArrayList;
+import java.util.Collections;
+public class Personal  implements Comparable<Personal> {
+    int age;
+    
+    String name;
+public Personal(int age, String name)
+    {
+        this.age=age;
+        
+        this.name=name;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public String getName() {
+        return name;
+    }
+    public static void main(String[] args) {
+      Personal obj1=new Personal(10,"sonu");
+      Personal obj2=new Personal(24,"monu");
+      Personal obj3=new Personal(34,"chotu");
+     Personal obj4=new Personal(24,"shyam");
+      Personal obj5=new Personal(17,"peter");
+      Personal obj6=new Personal(18,"umar");
+      ArrayList<Personal> ar=new ArrayList<Personal>();
+      ar.add(obj1);
+      ar.add(obj2);
+      ar.add(obj3);
+       ar.add(obj4);
+        ar.add(obj5);
+         ar.add(obj6);
+         for(Personal man : ar)
+             System.out.println(man.getAge()+""+man.getName()+"");
+         personalcompare percompare = new personalcompare();
+             Collections.sort(ar,percompare);   
+             for(Personal man : ar)
+             {
+             System.out.println(man.getAge()+""+man.getName()+"");
+      
+             }
+             Collections.sort(ar);   
+             for(Personal man : ar)
+             {
+             System.out.println(man.getAge()+""+man.getName()+"");
+      
+             }
+      
+      
+    }
+
+    @Override
+    public int compareTo(Personal o) {
+        return this.age-o.age;
+       // throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+   
+    
+    
+    }
+package personal;
+import java.util.Comparator;
+public class personalcompare implements Comparator<Personal> {
+
+    @Override
+    public int compare(Personal o1, Personal o2) {
+        return o1.getName().compareTo(o2.getName());
+        //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+  
+
+  
+    
+}
+
+
+  
+
+
+
+
+    
+    
+       
+    
+    
+
+
