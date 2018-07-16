@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Note Application</string>
+
+    <string name="type">TYPE</string>
+    <string name="title">TITLE</string>
+
+</resources>
